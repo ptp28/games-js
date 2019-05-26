@@ -1,2 +1,2 @@
-# rock-paper-scissor-game
-A simple Player vs. Computer rock-paper-scissor game 
+# Javascript Games
+Implementation of various popular games using plain Javascript.
