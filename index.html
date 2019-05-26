@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>
+            Games in Javascript
+        </title>
+        <style>
+        .split {
+            height: 100%;
+            width: 33.33%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+
+        .left {
+            left: 0;
+            background-color: #f44336;
+        }
+
+        .center {
+            left: 33.33%;
+            right: 33.33%;
+            background-color: #ffeb3b;
+        }
+
+        .right {
+            right: 0;
+            background-color: #2196f3;
+        }
+
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .centered img {
+            width: 150px;
+            border-radius: 50%;
+        }
+        h1 {
+            font-size: 5vw;
+        }
+        h2 {
+            font-style: italic;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="split left" onclick="goToGame(1);">
+            <div class="centered">
+              <img src="./Snake/icon.jpg" alt="Snake">
+              <u><h1>SNAKE</h1></u>
+              <h2>A throwback to the classic Nokia game</h2>
+            </div>
+          </div>
+          
+          <div class="split center" onclick="goToGame(2);">
+            <div class="centered">
+              <img src="./Rock-Paper-Scissors/icon.jpg" alt="Rock-Paper-Scissor">
+              <u><h1>Rock-Paper-Scissors</h1></u>
+              <h2>The only way to solve disputes</h2>
+            </div>
+          </div>
+
+          <div class="split right" onclick="goToGame(3);">
+            <div class="centered">
+              <img src="./Ping-Pong/icon.png" alt="Ping Pong">
+              <u><h1>Ping Pong</h1></u>
+              <h2>A Player vs Computer game that never gets old</h2>
+            </div>
+          </div>
+    </body>
+    <script>
+        function goToGame(game)
+        {
+            switch(game)
+            {
+                case 1:
+                window.open('./Snake/index.html', '_blank');
+                break;
+                case 2:
+                window.open('./Rock-Paper-Scissors/index.html', '_blank');
+                break;
+                case 3:
+                window.open('./Ping-Pong/index.html', '_blank');
+                break;
+            }
+        }
+    </script>
+</html>
