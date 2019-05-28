@@ -17,20 +17,22 @@
 
         .left {
             left: 0;
-            background-color: #f44336;
+            background-color: #DC143C;
+            border: 30px solid white;
         }
 
         .center {
             left: 33.33%;
             right: 33.33%;
             background-color: #ffeb3b;
+            border: 30px solid white;
         }
 
         .right {
             right: 0;
             background-color: #2196f3;
+            border: 30px solid white;
         }
-
 
         .centered {
             position: absolute;
@@ -60,22 +62,23 @@
               <h2>A throwback to the classic Nokia game</h2>
             </div>
           </div>
-          
-          <div class="split center" onclick="goToGame(2);">
-            <div class="centered">
-              <img src="./Rock-Paper-Scissors/icon.jpg" alt="Rock-Paper-Scissor">
-              <u><h1>Rock-Paper-Scissors</h1></u>
-              <h2>The only way to solve disputes</h2>
-            </div>
-          </div>
 
-          <div class="split right" onclick="goToGame(3);">
+          <div class="split center" onclick="goToGame(2);">
             <div class="centered">
               <img src="./Ping-Pong/icon.png" alt="Ping Pong">
               <u><h1>Ping Pong</h1></u>
               <h2>A Player vs Computer game that never gets old</h2>
             </div>
           </div>
+
+          <div class="split right" onclick="goToGame(3);">
+                <div class="centered">
+                  <img src="./Rock-Paper-Scissors/icon.jpg" alt="Rock-Paper-Scissor">
+                  <u><h1>Rock-Paper-Scissors</h1></u>
+                  <h2>The only way to solve disputes</h2>
+                </div>
+        </div>
+
     </body>
     <script>
         function goToGame(game)
@@ -86,10 +89,10 @@
                 window.open('./Snake/index.html', '_blank');
                 break;
                 case 2:
-                window.open('./Rock-Paper-Scissors/index.html', '_blank');
+                window.open('./Ping-Pong/index.html', '_blank');
                 break;
                 case 3:
-                window.open('./Ping-Pong/index.html', '_blank');
+                window.open('./Rock-Paper-Scissors/index.html', '_blank');
                 break;
             }
         }

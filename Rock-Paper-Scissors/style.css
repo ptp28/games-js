@@ -6,7 +6,8 @@
 
 section {
   height: 100vh;
-  background-color: #0a3d62;
+  /* background-color: #2196f3; */
+  background-image: radial-gradient(#29b6f6,#01579b,black);
   font-family: sans-serif;
 }
 
