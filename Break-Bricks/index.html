@@ -2,20 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>2D Breakout Game - JavScript</title>
+    <title>Brick Breaker Game</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Germania+One">
     
     <style>
         *{
             font-family: "Germania One";
-        }
-        #sound{
-            width: 30px;
-            height : 30px;
-            cursor: pointer;
-            position: absolute;
-            top : 465px;
-            left : 15px;
         }
         #gameover{
             position: absolute;
@@ -46,22 +38,32 @@
             font-size: 1.25em;
             color : #FFF;
         }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        canvas {
+            border: solid;
+            display: block;
+        }
+        body {
+            zoom: 60%;
+            background-color: #000000;
+background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+        } 
+        
     </style>
 </head>
 <body>
-    <div class="sound">
-        <img src="img/SOUND_ON.png" alt="" id="sound">
+    <div class="centered">        
+                <div id="gameover">
+                    <div id="restart">Play Again!</div>
+                </div>
+            <canvas id="breakout" width="640" height="800"></canvas>
     </div>
-    
-    <div id="gameover">
-        <img src="img/youwon.png" alt="" id="youwon">
-        <img src="img/gameover.png" alt="" id="youlose">
-        <div id="restart">Play Again!</div>
-    </div>
-   
-    <canvas id="breakout" width="400" height="500"></canvas>
-    
-    <script src="components.js"></script>
-    <script src="game.js"></script>
+    <script src="GameLogic.js"></script>
 </body>
 </html>

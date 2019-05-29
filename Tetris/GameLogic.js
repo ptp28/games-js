@@ -1,23 +1,22 @@
-const cvs = document.getElementById("tetris");
-const ctx = cvs.getContext("2d");
+const canvas = document.getElementById("tetris");
+const context = canvas.getContext("2d");
 const scoreElement = document.getElementById("score");
 
 const ROW = 20;
-const COL = COLUMN = 10;
-const SQ = squareSize = 20;
+const COL = COLUMN = 15;
+const SQ = squareSize = 45;
 const VACANT = "WHITE"; // color of an empty square
 
 // draw a square
 function drawSquare(x,y,color){
-    ctx.fillStyle = color;
-    ctx.fillRect(x*SQ,y*SQ,SQ,SQ);
+    context.fillStyle = color;
+    context.fillRect(x*SQ,y*SQ,SQ,SQ);
 
-    ctx.strokeStyle = "BLACK";
-    ctx.strokeRect(x*SQ,y*SQ,SQ,SQ);
+    context.strokeStyle = "BLACK";
+    context.strokeRect(x*SQ,y*SQ,SQ,SQ);
 }
 
 // create the board
-
 let board = [];
 for( r = 0; r <ROW; r++){
     board[r] = [];
@@ -38,7 +37,6 @@ function drawBoard(){
 drawBoard();
 
 // the pieces and their colors
-
 const PIECES = [
     [Z,"red"],
     [S,"green"],
@@ -50,7 +48,6 @@ const PIECES = [
 ];
 
 // generate random pieces
-
 function randomPiece(){
     let r = randomN = Math.floor(Math.random() * PIECES.length) // 0 -> 6
     return new Piece( PIECES[r][0],PIECES[r][1]);
@@ -59,7 +56,6 @@ function randomPiece(){
 let p = randomPiece();
 
 // The Object Piece
-
 function Piece(tetromino,color){
     this.tetromino = tetromino;
     this.color = color;
@@ -86,20 +82,16 @@ Piece.prototype.fill = function(color){
 }
 
 // draw a piece to the board
-
 Piece.prototype.draw = function(){
     this.fill(this.color);
 }
 
 // undraw a piece
-
-
 Piece.prototype.unDraw = function(){
     this.fill(VACANT);
 }
 
 // move Down the piece
-
 Piece.prototype.moveDown = function(){
     if(!this.collision(0,1,this.activeTetromino)){
         this.unDraw();

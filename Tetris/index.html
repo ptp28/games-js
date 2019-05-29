@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Tetris Game JS</title>
+    <title>Tetris Game</title>
     <style>
         #score{
             display: inline-block;
@@ -14,16 +14,33 @@
         canvas{
             display: block;
             margin:0 auto;
+            border: solid;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        body {
+            zoom: 50%;
+            background-image: linear-gradient(to right,red,#ef6c00,orange,#f9a825,yellow,#b2ff59,lime,#4caf50,#00695c,blue,#283593,#1a237e,indigo,#8B00FF);
+        }
+        .scoreDisplay {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 7vh;
         }
     </style>
 </head>
 <body>
-   <div>This Game Was Created By <a target="_blank" href="https://www.youtube.com/c/codeexplained">Code Explained</a></div><br>
-    <canvas id="tetris" width="200" height="400"></canvas>
-    <div>
-        Score : <div id="score">0</div>
-    </div>
-    <script src="tetrominoes.js"></script>
-    <script src="tetris.js"></script>
+        <div class="centered">
+                <canvas id="tetris" width="675" height="900"></canvas>
+                <div class="scoreDisplay">
+                    Score : <div id="score">0</div>
+                </div>
+        </div>
 </body>
+<script src="GameData.js"></script>
+<script src="GameLogic.js"></script>
 </html>

@@ -1,12 +1,29 @@
+// LOAD SOUNDS
+
+const WALL_HIT = new Audio();
+WALL_HIT.src = "sounds/wall.mp3";
+
+const LIFE_LOST = new Audio();
+LIFE_LOST.src = "sounds/life_lost.mp3";
+
+const PADDLE_HIT = new Audio();
+PADDLE_HIT.src = "sounds/paddle_hit.mp3";
+
+const WIN = new Audio();
+WIN.src = "sounds/win.mp3";
+
+const BRICK_HIT = new Audio();
+BRICK_HIT.src = "sounds/brick_hit.mp3";
+
 // SELECT CANVAS ELEMENT
-const cvs = document.getElementById("breakout");
-const ctx = cvs.getContext("2d");
+const canvas = document.getElementById("breakout");
+const context = canvas.getContext("2d");
 
 // ADD BORDER TO CANVAS
-cvs.style.border = "1px solid #0ff";
+canvas.style.border = "1px solid #0ff";
 
 // MAKE LINE THIK WHEN DRAWING TO CANVAS
-ctx.lineWidth = 3;
+context.lineWidth = 3;
 
 // GAME VARIABLES AND CONSTANTS
 const PADDLE_WIDTH = 100;
@@ -17,15 +34,15 @@ let LIFE = 3; // PLAYER HAS 3 LIVES
 let SCORE = 0;
 const SCORE_UNIT = 10;
 let LEVEL = 1;
-const MAX_LEVEL = 3;
+const MAX_LEVEL = 5;
 let GAME_OVER = false;
 let leftArrow = false;
 let rightArrow = false;
 
 // CREATE THE PADDLE
 const paddle = {
-    x : cvs.width/2 - PADDLE_WIDTH/2,
-    y : cvs.height - PADDLE_MARGIN_BOTTOM - PADDLE_HEIGHT,
+    x : canvas.width/2 - PADDLE_WIDTH/2,
+    y : canvas.height - PADDLE_MARGIN_BOTTOM - PADDLE_HEIGHT,
     width : PADDLE_WIDTH,
     height : PADDLE_HEIGHT,
     dx :5
@@ -33,11 +50,11 @@ const paddle = {
 
 // DRAW PADDLE
 function drawPaddle(){
-    ctx.fillStyle = "#2e3548";
-    ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
+    context.fillStyle = "#2e3548";
+    context.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
     
-    ctx.strokeStyle = "#ffcd05";
-    ctx.strokeRect(paddle.x, paddle.y, paddle.width, paddle.height);
+    context.strokeStyle = "#ffcd05";
+    context.strokeRect(paddle.x, paddle.y, paddle.width, paddle.height);
 }
 
 // CONTROL THE PADDLE
@@ -58,7 +75,7 @@ document.addEventListener("keyup", function(event){
 
 // MOVE PADDLE
 function movePaddle(){
-    if(rightArrow && paddle.x + paddle.width < cvs.width){
+    if(rightArrow && paddle.x + paddle.width < canvas.width){
         paddle.x += paddle.dx;
     }else if(leftArrow && paddle.x > 0){
         paddle.x -= paddle.dx;
@@ -67,26 +84,26 @@ function movePaddle(){
 
 // CREATE THE BALL
 const ball = {
-    x : cvs.width/2,
+    x : canvas.width/2,
     y : paddle.y - BALL_RADIUS,
     radius : BALL_RADIUS,
-    speed : 4,
-    dx : 3 * (Math.random() * 2 - 1),
-    dy : -3
+    speed : 7,
+    dx : 4 * (Math.random() * 2 - 1),
+    dy : -4
 }
 
 // DRAW THE BALL
 function drawBall(){
-    ctx.beginPath();
+    context.beginPath();
     
-    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*2);
-    ctx.fillStyle = "#ffcd05";
-    ctx.fill();
+    context.arc(ball.x, ball.y, ball.radius, 0, Math.PI*2);
+    context.fillStyle = "#ffcd05";
+    context.fill();
     
-    ctx.strokeStyle = "#2e3548";
-    ctx.stroke();
+    context.strokeStyle = "#2e3548";
+    context.stroke();
     
-    ctx.closePath();
+    context.closePath();
 }
 
 // MOVE THE BALL
@@ -97,7 +114,7 @@ function moveBall(){
 
 // BALL AND WALL COLLISION DETECTION
 function ballWallCollision(){
-    if(ball.x + ball.radius > cvs.width || ball.x - ball.radius < 0){
+    if(ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0){
         ball.dx = - ball.dx;
         WALL_HIT.play();
     }
@@ -107,7 +124,7 @@ function ballWallCollision(){
         WALL_HIT.play();
     }
     
-    if(ball.y + ball.radius > cvs.height){
+    if(ball.y + ball.radius > canvas.height){
         LIFE--; // LOSE LIFE
         LIFE_LOST.play();
         resetBall();
@@ -116,10 +133,10 @@ function ballWallCollision(){
 
 // RESET THE BALL
 function resetBall(){
-    ball.x = cvs.width/2;
+    ball.x = canvas.width/2;
     ball.y = paddle.y - BALL_RADIUS;
-    ball.dx = 3 * (Math.random() * 2 - 1);
-    ball.dy = -3;
+    ball.dx = 4 * (Math.random() * 2 - 1);
+    ball.dy = -4;
 }
 
 // BALL AND PADDLE COLLISION
@@ -147,7 +164,7 @@ function ballPaddleCollision(){
 // CREATE THE BRICKS
 const brick = {
     row : 1,
-    column : 5,
+    column : 8,
     width : 55,
     height : 20,
     offSetLeft : 20,
@@ -181,11 +198,11 @@ function drawBricks(){
             let b = bricks[r][c];
             // if the brick isn't broken
             if(b.status){
-                ctx.fillStyle = brick.fillColor;
-                ctx.fillRect(b.x, b.y, brick.width, brick.height);
+                context.fillStyle = brick.fillColor;
+                context.fillRect(b.x, b.y, brick.width, brick.height);
                 
-                ctx.strokeStyle = brick.strokeColor;
-                ctx.strokeRect(b.x, b.y, brick.width, brick.height);
+                context.strokeStyle = brick.strokeColor;
+                context.strokeRect(b.x, b.y, brick.width, brick.height);
             }
         }
     }
@@ -210,14 +227,14 @@ function ballBrickCollision(){
 }
 
 // show game stats
-function showGameStats(text, textX, textY, img, imgX, imgY){
+function showGameStats(text, textX, textY,title, titleX, titleY){
     // draw text
-    ctx.fillStyle = "#FFF";
-    ctx.font = "25px Germania One";
-    ctx.fillText(text, textX, textY);
+    context.fillStyle = "black";
+    context.font = "25px Germania One";
+    context.fillText(text, textX, textY);
     
     // draw image
-    ctx.drawImage(img, imgX, imgY, width = 25, height = 25);
+    context.fillText(title, titleX, titleY);
 }
 
 // DRAW FUNCTION
@@ -229,17 +246,16 @@ function draw(){
     drawBricks();
     
     // SHOW SCORE
-    showGameStats(SCORE, 35, 25, SCORE_IMG, 5, 5);
+    showGameStats(SCORE, 105, 25, "SCORE : ", 10, 25);
     // SHOW LIVES
-    showGameStats(LIFE, cvs.width - 25, 25, LIFE_IMG, cvs.width-55, 5); 
+    showGameStats(LIFE, canvas.width - 25, 25, "LIVES : ", canvas.width-105, 25); 
     // SHOW LEVEL
-    showGameStats(LEVEL, cvs.width/2, 25, LEVEL_IMG, cvs.width/2 - 30, 5);
+    showGameStats(LEVEL, canvas.width/2, 25, "LEVEL : ", canvas.width/2 - 80, 25);
 }
 
 // game over
 function gameOver(){
     if(LIFE <= 0){
-        showYouLose();
         GAME_OVER = true;
     }
 }
@@ -265,7 +281,7 @@ function levelUp(){
         }
         brick.row++;
         createBricks();
-        ball.speed += 0.5;
+        ball.speed += 2;
         resetBall();
         LEVEL++;
     }
@@ -291,8 +307,9 @@ function update(){
 // GAME LOOP
 function loop(){
     // CLEAR THE CANVAS
-    ctx.drawImage(BG_IMG, 0, 0);
-    
+    // context.clearRect(0,0,canvas.width,canvas.height);
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas.width, canvas.height);
     draw();
     
     update();
@@ -303,66 +320,12 @@ function loop(){
 }
 loop();
 
-
-// SELECT SOUND ELEMENT
-const soundElement  = document.getElementById("sound");
-
-soundElement.addEventListener("click", audioManager);
-
-function audioManager(){
-    // CHANGE IMAGE SOUND_ON/OFF
-    let imgSrc = soundElement.getAttribute("src");
-    let SOUND_IMG = imgSrc == "img/SOUND_ON.png" ? "img/SOUND_OFF.png" : "img/SOUND_ON.png";
-    
-    soundElement.setAttribute("src", SOUND_IMG);
-    
-    // MUTE AND UNMUTE SOUNDS
-    WALL_HIT.muted = WALL_HIT.muted ? false : true;
-    PADDLE_HIT.muted = PADDLE_HIT.muted ? false : true;
-    BRICK_HIT.muted = BRICK_HIT.muted ? false : true;
-    WIN.muted = WIN.muted ? false : true;
-    LIFE_LOST.muted = LIFE_LOST.muted ? false : true;
-}
-
 // SHOW GAME OVER MESSAGE
 /* SELECT ELEMENTS */
 const gameover = document.getElementById("gameover");
-const youwin = document.getElementById("youwin");
-const youlose = document.getElementById("youlose");
 const restart = document.getElementById("restart");
 
 // CLICK ON PLAY AGAIN BUTTON
 restart.addEventListener("click", function(){
     location.reload(); // reload the page
 })
-
-// SHOW YOU WIN
-function showYouWin(){
-    gameover.style.display = "block";
-    youwon.style.display = "block";
-}
-
-// SHOW YOU LOSE
-function showYouLose(){
-    gameover.style.display = "block";
-    youlose.style.display = "block";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

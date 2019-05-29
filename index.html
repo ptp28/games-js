@@ -4,8 +4,26 @@
             Games in Javascript
         </title>
         <style>
+          .g1 {
+            background-color: #DC143C;
+          }
+          .g2 {
+            background-color: #ffeb3b;
+          }
+          .g3 {
+            background-color: #2196f3;
+          }
+          .g4 {
+            background-color: #eeeeee;
+          }
+          .g5 {
+            background-color: #4caf50;
+          }
+          .g6 {
+            background-color: #424242;
+          }
         .split {
-            height: 100%;
+            height: 50%;
             width: 33.33%;
             position: fixed;
             z-index: 1;
@@ -17,21 +35,28 @@
 
         .left {
             left: 0;
-            background-color: #DC143C;
-            border: 30px solid white;
+            border: 15px solid white;
         }
 
         .center {
             left: 33.33%;
             right: 33.33%;
-            background-color: #ffeb3b;
-            border: 30px solid white;
+            border: 15px solid white;
         }
 
         .right {
             right: 0;
-            background-color: #2196f3;
-            border: 30px solid white;
+            border: 15px solid white;
+        }
+
+        .top {
+            top: 0;
+            bottom: 50%;
+        }
+
+        .bottom {
+            top: 50%;
+            bottom: 0;
         }
 
         .centered {
@@ -52,18 +77,21 @@
         h2 {
             font-style: italic;
         }
+        body {
+          zoom : 50%;
+        }
         </style>
     </head>
     <body>
-        <div class="split left" onclick="goToGame(1);">
+        <div class="split top left g1" onclick="goToGame(1);">
             <div class="centered">
               <img src="./Snake/icon.jpg" alt="Snake">
               <u><h1>SNAKE</h1></u>
-              <h2>A throwback to the classic Nokia game</h2>
+              <h2>A throwback to the classic old-school mobile game</h2>
             </div>
           </div>
 
-          <div class="split center" onclick="goToGame(2);">
+          <div class="split top center g2" onclick="goToGame(2);">
             <div class="centered">
               <img src="./Ping-Pong/icon.png" alt="Ping Pong">
               <u><h1>Ping Pong</h1></u>
@@ -71,13 +99,39 @@
             </div>
           </div>
 
-          <div class="split right" onclick="goToGame(3);">
+          <div class="split top right g3" onclick="goToGame(3);">
                 <div class="centered">
                   <img src="./Rock-Paper-Scissors/icon.jpg" alt="Rock-Paper-Scissor">
                   <u><h1>Rock-Paper-Scissors</h1></u>
                   <h2>The only way to solve disputes</h2>
                 </div>
         </div>
+
+        <!-- ------------------ -->
+
+        <div class="split bottom left g4" onclick="goToGame(4);">
+            <div class="centered">
+                <img src="./Tetris/logo.jpg" alt="Tetris">
+                <u><h1>Tetris</h1></u>
+                <h2>A game that needs no introduction</h2>
+              </div>
+              </div>
+    
+              <div class="split bottom center g5" onclick="goToGame(5);">
+                <div class="centered">
+                    <img src="./Flappy-Bird/logo.png" alt="Flappy Birds">
+                    <u><h1>Flappy Birds</h1></u>
+                    <h2>The insanely addictive game</h2>
+                  </div>
+              </div>
+    
+              <div class="split bottom right g6" onclick="goToGame(6);">
+                    <div class="centered">
+                      <img src="./Break-Bricks/logo.jpg" alt="Brick Breaker">
+                      <u><h1>Brick Breaker</h1></u>
+                      <h2>Clear the way</h2>
+                    </div>
+            </div>
 
     </body>
     <script>
@@ -93,6 +147,15 @@
                 break;
                 case 3:
                 window.open('./Rock-Paper-Scissors/index.html', '_blank');
+                break;
+                case 4:
+                window.open('./Tetris/index.html', '_blank');
+                break;
+                case 5:
+                window.open('./Flappy-Bird/index.html', '_blank');
+                break;
+                case 6:
+                window.open('./Break-Bricks/index.html', '_blank');
                 break;
             }
         }

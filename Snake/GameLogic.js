@@ -28,7 +28,7 @@ window.onload=function() {
 				context.fillStyle="black";
 				context.fillRect(0,0,canvas.width,canvas.height);
 			
-				context.fillStyle="lime";
+				context.fillStyle="white";
 				for(var i=0;i<trail.length;i++) {
 					context.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
 					if(trail[i].x==px && trail[i].y==py) {
@@ -61,24 +61,6 @@ window.onload=function() {
 						xv=1;yv=0;
 						break;
 					case 40:
-						xv=0;yv=1;
-						break;
-				}
-            }
-            
-            function screenController(control)
-            {
-                switch(control) {
-					case 'L':
-						xv=-1;yv=0;
-						break;
-					case 'U':
-						xv=0;yv=-1;
-						break;
-					case 'R':
-						xv=1;yv=0;
-						break;
-					case 'D':
 						xv=0;yv=1;
 						break;
 				}

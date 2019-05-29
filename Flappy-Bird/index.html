@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flappy Bird</title>
+    <style>
+      .centered {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+          }
+          canvas {
+              border: solid;
+              display: block;
+          }
+          body {
+              background-image: linear-gradient(to right,#66bb6a,#43a047,#2e7d32,#1b5e20,#004d40);
+           }
+        </style>
+  </head>
+  <body>
+    <div class="centered">
+        <canvas id="canvas" width="288" height="512"></canvas>
+    </div>
+  </body>
+  <script src="GameLogic.js"></script>
+</html>
