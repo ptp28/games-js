@@ -1,32 +1,24 @@
 <html>
 <head>
-	<title>
-		PING-PONG Game
-	</title>
-	<style>
-			.centered {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				text-align: center;
-			}
-			input{
-				width: 100px;
-				height: 50px;
-			}
-			body {
-				background-image: radial-gradient(#fffde7,#ffee58,#f9a825,#f57f17,#ff6f00);
-			}
-		</style>
+    <title> PING-PONG Game </title>
+    <style>
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        body {
+            /* background-color: aquamarine; */
+            background-image: radial-gradient(#fffde7,#ffee58,#f9a825,#f57f17,#ff6f00);
+        }
+    </style>
 </head>
 <body>
-	<div class="centered">
-			<canvas id="gameCanvas" width="800" height="600"></canvas>
-	</div>
+        <div class="centered">
+                <canvas id="pong" width="800" height="600"></canvas>
+        </div>
 </body>
-
-<script src="GameLogic.js" type="text/javascript">
-</script>
-
+<script src="GameLogic.js"></script>
 </html>
