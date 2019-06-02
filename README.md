@@ -1,7 +1,7 @@
 # Javascript Games
 ### Implementation of various popular games using plain Javascript.
 
-There are currently three games available -
+There are currently six games available -
 1. Snake
 2. Rock-Paper-Scissor
 3. Ping-Pong
