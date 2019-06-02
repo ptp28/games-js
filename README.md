@@ -1,5 +1,5 @@
 # Javascript Games
-Implementation of various popular games using plain Javascript.
+### Implementation of various popular games using plain Javascript.
 
 There are currently three games available -
 1. Snake
