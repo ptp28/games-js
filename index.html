@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <title>Games in Javascript</title>
     </head>
     <body onload="init();">
         <div class="cards-list" id="cards-list">
@@ -21,12 +22,13 @@
 <script>
   var games = [];
   games.push({id:0, title:"Snake", titleColor:"white", src:"./Snake"});
-  games.push({id:1, title:"Ping-Pong", titleColor:"white", src:"./Ping-Pong"});
-  games.push({id:2, title:"Rock-Paper-Scissor", titleColor:"black", src:"./Rock-Paper-Scissor"});
-  games.push({id:3, title:"Tetris", titleColor:"black", src:"./Tetris"});
-  games.push({id:4, title:"Flappy-Bird", titleColor:"white", src:"./Flappy-Bird"});
-  games.push({id:5, title:"Break-Bricks", titleColor:"white", src:"./Break-Bricks"});
+  games.push({id:1, title:"Tetris", titleColor:"black", src:"./Tetris"});
+  games.push({id:2, title:"Break-Bricks", titleColor:"white", src:"./Break-Bricks"});
+  games.push({id:3, title:"Flappy-Bird", titleColor:"black", src:"./Flappy-Bird"});
+  games.push({id:4, title:"Rock-Paper-Scissor", titleColor:"black", src:"./Rock-Paper-Scissor"});
+  games.push({id:5, title:"Ping-Pong", titleColor:"white", src:"./Ping-Pong"});
   games.push({id:6, title:"Melody-Maker", titleColor:"black", src:"./Melody-Maker"});
+  games.push({id:7, title:"Goblin-Hunt", titleColor:"white", src:"./Goblin-Hunt"});
 
   var cardsList = document.getElementById("cards-list");
 

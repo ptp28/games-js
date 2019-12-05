@@ -52,3 +52,4 @@ There are currently six games available -
 - [Chris DeLeon's course on Game Development on Udemy](https://www.udemy.com/code-your-first-game/)
 - [Chris DeLeon's youtube tutorial](https://youtu.be/xGmXxpIj6vs)
 - [Code Explained's youtube channel](https://www.youtube.com/channel/UC8n8ftV94ZU_DJLOLtrpORA/featured)
+- (http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
