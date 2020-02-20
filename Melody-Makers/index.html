@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <title>Games in Javascript</title>
+        <title>Melody Makers</title>
     </head>
     <body onload="init();">
         <div class="cards-list" id="cards-list">
@@ -21,14 +21,8 @@
 
 <script>
   var games = [];
-  games.push({id:0, title:"Snake", titleColor:"white", src:"./Snake"});
-  games.push({id:1, title:"Tetris", titleColor:"black", src:"./Tetris"});
-  games.push({id:2, title:"Break-Bricks", titleColor:"white", src:"./Break-Bricks"});
-  games.push({id:3, title:"Flappy-Bird", titleColor:"black", src:"./Flappy-Bird"});
-  games.push({id:4, title:"Rock-Paper-Scissor", titleColor:"black", src:"./Rock-Paper-Scissor"});
-  games.push({id:5, title:"Ping-Pong", titleColor:"white", src:"./Ping-Pong"});
-  games.push({id:6, title:"Melody-Makers", titleColor:"black", src:"./Melody-Makers"});
-  games.push({id:7, title:"Goblin-Hunt", titleColor:"white", src:"./Goblin-Hunt"});
+  games.push({id:0, title:"Xylophone", titleColor:"black", src:"./Xylophone"});
+  games.push({id:1, title:"Piano", titleColor:"black", src:"./Piano"});
 
   var cardsList = document.getElementById("cards-list");
 
@@ -38,7 +32,7 @@
     {
       var cardContainer = document.createElement("div");
       cardContainer.className = "card " + games[i].id;
-      cardContainer.setAttribute("onclick","window.open('"+games[i].src+"/index.html"+"','_blank');");
+      cardContainer.setAttribute("onclick","window.open('"+games[i].src+"/index.html"+"','_self');");
 
       var imageContainer = document.createElement("div");
       imageContainer.className = "card_image";

@@ -8,7 +8,8 @@ window.addEventListener("load", () => {
     "#c060d3",
     "#d3d160",
     "#606bd3",
-    "#60c2d3"
+    "#60c2d3",
+    "#90A4AE"
   ];
 
   pads.forEach((pad, index) => {

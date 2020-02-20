@@ -8,6 +8,8 @@ There are currently six games available -
 4. Tetris
 5. Flappy Bird
 6. Brick Breaker
+7. Goblin Hunt
+8. Melody Makers
 
 ### Games : 
 
@@ -47,9 +49,22 @@ There are currently six games available -
 * Uses keyboard buttons - left arrow key and right arrow key - for controlling the paddle.
 <img src="./screenshots/brick-breaker.png" width=650px height=350px>
 
+#### 7. Goblin Hunt
+* Single player game.
+* Uses HTML canvas.
+* Added sound effects.
+* Uses keyboard buttons - left arrow key and right arrow key - for controlling the hero.
+<img src="./screenshots/goblin-hunt.png" width=650px height=350px>
+
+#### 8. Melody Makers
+* Piano
+<img src="./screenshots/piano.png" width=650px height=350px>
+* Xylophone
+<img src="./screenshots/xylophone.png" width=650px height=350px>
 
 ### References :
 - [Chris DeLeon's course on Game Development on Udemy](https://www.udemy.com/code-your-first-game/)
 - [Chris DeLeon's youtube tutorial](https://youtu.be/xGmXxpIj6vs)
 - [Code Explained's youtube channel](https://www.youtube.com/channel/UC8n8ftV94ZU_DJLOLtrpORA/featured)
-- (http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
+- [Matt Hackett's Blog Tutorial](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
+- [Joe Liang's tutorial on How to Build a Piano Keyboard using Vanilla Javascript](https://www.freecodecamp.org/news/javascript-piano-keyboard/)
