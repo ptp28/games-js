@@ -62,9 +62,26 @@ There are currently six games available -
 * Xylophone
 <img src="./screenshots/xylophone.png" width=650px height=350px>
 
+#### 9. Hangman
+* Single player game.
+* Guess the word.
+<img src="./screenshots/hangman.png" width=650px height=350px>
+
+#### 10. Typing Test
+* Single player game.
+* Type the given words until the time runs out.
+<img src="./screenshots/typing-test.png" width=650px height=350px>
+
+#### 11. Dino-Run
+* Single player game.
+* Cloned from the popular game included in the Chromium project.
+<img src="./screenshots/dino-run.png" width=650px height=350px>
+
 ### References :
 - [Chris DeLeon's course on Game Development on Udemy](https://www.udemy.com/code-your-first-game/)
 - [Chris DeLeon's youtube tutorial](https://youtu.be/xGmXxpIj6vs)
 - [Code Explained's youtube channel](https://www.youtube.com/channel/UC8n8ftV94ZU_DJLOLtrpORA/featured)
 - [Matt Hackett's Blog Tutorial](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
 - [Joe Liang's tutorial on How to Build a Piano Keyboard using Vanilla Javascript](https://www.freecodecamp.org/news/javascript-piano-keyboard/)
+- [Brad Traversy repository of JS projects](https://github.com/bradtraversy/vanillawebprojects)
+- [Wayou Liu's clone of the Chromium game](https://github.com/wayou/t-rex-runner)
