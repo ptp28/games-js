@@ -21,7 +21,6 @@ class Square {
         {
             this.context.strokeStyle = "white";
         }
-        // this.context.lineWidth = 3;
         this.context.fill();
         this.context.stroke();
     }
